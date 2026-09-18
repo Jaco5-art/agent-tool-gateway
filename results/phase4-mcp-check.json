@@ -1,0 +1,329 @@
+{
+  "mode": "mcp_protocol",
+  "timestamp": "2026-09-16T15:41:08.802860+00:00",
+  "python": "3.12.14",
+  "versions": {
+    "mcp": "2.2.0",
+    "openai-agents": "0.22.2",
+    "pydantic": "2.13.5"
+  },
+  "authorization": "phase4_policy_enforced",
+  "cases": [
+    {
+      "case_id": "customer",
+      "expected_tool": "crm.get_customer",
+      "expected_decision": "ALLOW",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "customer_id": "customer_001",
+        "name": "Demo Customer",
+        "status": "active"
+      },
+      "audit": [
+        {
+          "request_id": "8e9f1345ca5f46ffa2f77339791e9c3a",
+          "session_id": "customer",
+          "tool": "crm.get_customer",
+          "timestamp": "2026-09-16T15:41:09.328813+00:00",
+          "policy_decision": "ALLOW",
+          "policy_version": "phase4-v1",
+          "reason_code": "ALL_REQUIRED_SCOPES_MATCH",
+          "parameters_hash": "b1209ad8f43d0a3d5f6a67adc5598f746fb39d7956e9b2a469bc6a3987340555",
+          "user_id": "user_17e906d7d7cc43b185a8b5af2e3e8b8c",
+          "agent_id": "support-agent_17e906d7d7cc43b185a8b5af2e3e8b8c",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_17e906d7d7cc43b185a8b5af2e3e8b8c",
+          "task_scope": [
+            "customer:customer_001",
+            "ticket:ticket_101",
+            "order:order_438",
+            "dataset:orders_customer_001"
+          ],
+          "task_actions": [
+            "customer.read",
+            "ticket.read",
+            "ticket.close",
+            "refund.issue",
+            "database.query"
+          ],
+          "task_refund_limit_minor": 50000,
+          "task_refund_currency": "GBP",
+          "authenticated_at": 1789573268.81035,
+          "expires_at": 1789576868.81035,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "risk_level": "LOW",
+          "action": "customer.read",
+          "resource_type": "customer",
+          "resource_id": "customer_001",
+          "matched_grant_ids": [
+            "user_17e906d7d7cc43b185a8b5af2e3e8b8c_customer_read",
+            "support-agent_17e906d7d7cc43b185a8b5af2e3e8b8c_customer_read"
+          ],
+          "execution_status": "succeeded",
+          "latency_ms": 2.901
+        }
+      ]
+    },
+    {
+      "case_id": "ticket",
+      "expected_tool": "ticket.read",
+      "expected_decision": "ALLOW",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "open",
+        "summary": "Delivery question",
+        "resolution": "",
+        "version": 1
+      },
+      "audit": [
+        {
+          "request_id": "bc8f3871b1444c508836e0edd84f23a9",
+          "session_id": "ticket",
+          "tool": "ticket.read",
+          "timestamp": "2026-09-16T15:41:10.052585+00:00",
+          "policy_decision": "ALLOW",
+          "policy_version": "phase4-v1",
+          "reason_code": "ALL_REQUIRED_SCOPES_MATCH",
+          "parameters_hash": "b6b5f2e08641a181f05c77705ae35367ea7ed7db21db2a5ff6a3574751ecbfe0",
+          "user_id": "user_0119901371e14646bd7f9e0417e18429",
+          "agent_id": "support-agent_0119901371e14646bd7f9e0417e18429",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_0119901371e14646bd7f9e0417e18429",
+          "task_scope": [
+            "customer:customer_001",
+            "ticket:ticket_101",
+            "order:order_438",
+            "dataset:orders_customer_001"
+          ],
+          "task_actions": [
+            "customer.read",
+            "ticket.read",
+            "ticket.close",
+            "refund.issue",
+            "database.query"
+          ],
+          "task_refund_limit_minor": 50000,
+          "task_refund_currency": "GBP",
+          "authenticated_at": 1789573269.502021,
+          "expires_at": 1789576869.502021,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "risk_level": "LOW",
+          "action": "ticket.read",
+          "resource_type": "ticket",
+          "resource_id": "ticket_101",
+          "matched_grant_ids": [
+            "user_0119901371e14646bd7f9e0417e18429_ticket_read",
+            "support-agent_0119901371e14646bd7f9e0417e18429_ticket_read"
+          ],
+          "execution_status": "succeeded",
+          "latency_ms": 2.982
+        }
+      ]
+    },
+    {
+      "case_id": "close",
+      "expected_tool": "ticket.close",
+      "expected_decision": "ALLOW",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "closed",
+        "summary": "Delivery question",
+        "resolution": "Resolved",
+        "version": 2
+      },
+      "audit": [
+        {
+          "request_id": "a193176255c74a219b24458a0356087b",
+          "session_id": "close",
+          "tool": "ticket.close",
+          "timestamp": "2026-09-16T15:41:10.732695+00:00",
+          "policy_decision": "ALLOW",
+          "policy_version": "phase4-v1",
+          "reason_code": "ALL_REQUIRED_SCOPES_MATCH",
+          "parameters_hash": "c666e63c5463daf4f2a4329cae3b4df837c098753a0fbc2bfddce90d62af6e26",
+          "user_id": "user_097eb83a71414a0dbfc2d0b51f457cc1",
+          "agent_id": "support-agent_097eb83a71414a0dbfc2d0b51f457cc1",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_097eb83a71414a0dbfc2d0b51f457cc1",
+          "task_scope": [
+            "customer:customer_001",
+            "ticket:ticket_101",
+            "order:order_438",
+            "dataset:orders_customer_001"
+          ],
+          "task_actions": [
+            "customer.read",
+            "ticket.read",
+            "ticket.close",
+            "refund.issue",
+            "database.query"
+          ],
+          "task_refund_limit_minor": 50000,
+          "task_refund_currency": "GBP",
+          "authenticated_at": 1789573270.182312,
+          "expires_at": 1789576870.182312,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "risk_level": "MEDIUM",
+          "action": "ticket.close",
+          "resource_type": "ticket",
+          "resource_id": "ticket_101",
+          "matched_grant_ids": [
+            "user_097eb83a71414a0dbfc2d0b51f457cc1_ticket_close",
+            "support-agent_097eb83a71414a0dbfc2d0b51f457cc1_ticket_close"
+          ],
+          "execution_status": "succeeded",
+          "latency_ms": 3.512
+        }
+      ]
+    },
+    {
+      "case_id": "refund",
+      "expected_tool": "refund.issue",
+      "expected_decision": "REQUIRE_APPROVAL",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "decision": "REQUIRE_APPROVAL",
+        "reason_code": "HIGH_RISK_APPROVAL_REQUIRED",
+        "policy_version": "phase4-v1",
+        "risk_level": "HIGH",
+        "action": "refund.issue",
+        "resource_type": "order",
+        "resource_id": "order_438",
+        "matched_grant_ids": [
+          "user_4715af9fac184d789b6720bf56aa6e3e_refund_issue",
+          "support-agent_4715af9fac184d789b6720bf56aa6e3e_refund_issue"
+        ]
+      },
+      "audit": [
+        {
+          "request_id": "e625f630e88e45928c46e1016321ff18",
+          "session_id": "refund",
+          "tool": "refund.issue",
+          "timestamp": "2026-09-16T15:41:11.419391+00:00",
+          "policy_decision": "REQUIRE_APPROVAL",
+          "policy_version": "phase4-v1",
+          "reason_code": "HIGH_RISK_APPROVAL_REQUIRED",
+          "parameters_hash": "e0271935297dcd5ce32e794796656d0f4e8fcb0d9856adeafa7c1273aeb5aaf6",
+          "user_id": "user_4715af9fac184d789b6720bf56aa6e3e",
+          "agent_id": "support-agent_4715af9fac184d789b6720bf56aa6e3e",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_4715af9fac184d789b6720bf56aa6e3e",
+          "task_scope": [
+            "customer:customer_001",
+            "ticket:ticket_101",
+            "order:order_438",
+            "dataset:orders_customer_001"
+          ],
+          "task_actions": [
+            "customer.read",
+            "ticket.read",
+            "ticket.close",
+            "refund.issue",
+            "database.query"
+          ],
+          "task_refund_limit_minor": 50000,
+          "task_refund_currency": "GBP",
+          "authenticated_at": 1789573270.884063,
+          "expires_at": 1789576870.884063,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "risk_level": "HIGH",
+          "action": "refund.issue",
+          "resource_type": "order",
+          "resource_id": "order_438",
+          "matched_grant_ids": [
+            "user_4715af9fac184d789b6720bf56aa6e3e_refund_issue",
+            "support-agent_4715af9fac184d789b6720bf56aa6e3e_refund_issue"
+          ],
+          "execution_status": "blocked",
+          "error_type": "PolicyBlocked",
+          "latency_ms": 3.047
+        }
+      ]
+    },
+    {
+      "case_id": "query",
+      "expected_tool": "database.query",
+      "expected_decision": "ALLOW",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "columns": [
+          "order_id",
+          "customer_id",
+          "amount_minor",
+          "refunded_minor",
+          "currency"
+        ],
+        "rows": [
+          {
+            "order_id": "order_438",
+            "customer_id": "customer_001",
+            "amount_minor": 100000,
+            "refunded_minor": 0,
+            "currency": "GBP"
+          }
+        ],
+        "row_count": 1
+      },
+      "audit": [
+        {
+          "request_id": "f3911b8c1d394a2589eb7eec9f6f4522",
+          "session_id": "query",
+          "tool": "database.query",
+          "timestamp": "2026-09-16T15:41:12.087244+00:00",
+          "policy_decision": "ALLOW",
+          "policy_version": "phase4-v1",
+          "reason_code": "ALL_REQUIRED_SCOPES_MATCH",
+          "parameters_hash": "21dd91449c7947539862ecc124f6680ccfc1cb386723be80581ac50691c35341",
+          "user_id": "user_2d4be1ce593b4b549df7d54a40907f47",
+          "agent_id": "support-agent_2d4be1ce593b4b549df7d54a40907f47",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_2d4be1ce593b4b549df7d54a40907f47",
+          "task_scope": [
+            "customer:customer_001",
+            "ticket:ticket_101",
+            "order:order_438",
+            "dataset:orders_customer_001"
+          ],
+          "task_actions": [
+            "customer.read",
+            "ticket.read",
+            "ticket.close",
+            "refund.issue",
+            "database.query"
+          ],
+          "task_refund_limit_minor": 50000,
+          "task_refund_currency": "GBP",
+          "authenticated_at": 1789573271.538147,
+          "expires_at": 1789576871.538147,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "risk_level": "LOW",
+          "action": "database.query",
+          "resource_type": "dataset",
+          "resource_id": "orders_customer_001",
+          "matched_grant_ids": [
+            "user_2d4be1ce593b4b549df7d54a40907f47_database_query",
+            "support-agent_2d4be1ce593b4b549df7d54a40907f47_database_query"
+          ],
+          "execution_status": "succeeded",
+          "latency_ms": 3.371
+        }
+      ]
+    }
+  ],
+  "passed": 5,
+  "status": "passed"
+}

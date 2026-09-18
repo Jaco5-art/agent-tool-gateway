@@ -1,0 +1,207 @@
+{
+  "mode": "mcp_protocol",
+  "timestamp": "2026-09-16T15:24:11.193166+00:00",
+  "python": "3.12.14",
+  "versions": {
+    "mcp": "2.2.0",
+    "openai-agents": "0.22.2",
+    "pydantic": "2.13.5"
+  },
+  "authorization": "capability_policy_not_implemented_phase2",
+  "cases": [
+    {
+      "case_id": "customer",
+      "expected_tool": "crm.get_customer",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "customer_id": "customer_001",
+        "name": "Demo Customer",
+        "status": "active"
+      },
+      "audit": [
+        {
+          "request_id": "518bdc6bb0f64ca4a5bddaede0146336",
+          "session_id": "customer",
+          "tool": "crm.get_customer",
+          "timestamp": "2026-09-16T15:24:11.801500+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_2",
+          "parameters_hash": "b1209ad8f43d0a3d5f6a67adc5598f746fb39d7956e9b2a469bc6a3987340555",
+          "user_id": "user_01b911efe87c4eb7a00285349a01aa60",
+          "agent_id": "support-agent_01b911efe87c4eb7a00285349a01aa60",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_01b911efe87c4eb7a00285349a01aa60",
+          "task_scope": [
+            "demo-fixtures"
+          ],
+          "authenticated_at": 1789572251.195936,
+          "expires_at": 1789575851.195936,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "execution_status": "succeeded",
+          "latency_ms": 1.166
+        }
+      ]
+    },
+    {
+      "case_id": "ticket",
+      "expected_tool": "ticket.read",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "open",
+        "summary": "Delivery question",
+        "resolution": "",
+        "version": 1
+      },
+      "audit": [
+        {
+          "request_id": "1cb8b348f47146d58a7d21406444691f",
+          "session_id": "ticket",
+          "tool": "ticket.read",
+          "timestamp": "2026-09-16T15:24:12.724691+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_2",
+          "parameters_hash": "b6b5f2e08641a181f05c77705ae35367ea7ed7db21db2a5ff6a3574751ecbfe0",
+          "user_id": "user_1d99850516304373acb3b05bf3752009",
+          "agent_id": "support-agent_1d99850516304373acb3b05bf3752009",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_1d99850516304373acb3b05bf3752009",
+          "task_scope": [
+            "demo-fixtures"
+          ],
+          "authenticated_at": 1789572251.980577,
+          "expires_at": 1789575851.980577,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "execution_status": "succeeded",
+          "latency_ms": 0.959
+        }
+      ]
+    },
+    {
+      "case_id": "close",
+      "expected_tool": "ticket.close",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "closed",
+        "summary": "Delivery question",
+        "resolution": "Resolved",
+        "version": 2
+      },
+      "audit": [
+        {
+          "request_id": "ffe926e30c3f4a94822a2043c5b44e8c",
+          "session_id": "close",
+          "tool": "ticket.close",
+          "timestamp": "2026-09-16T15:24:13.518245+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_2",
+          "parameters_hash": "c666e63c5463daf4f2a4329cae3b4df837c098753a0fbc2bfddce90d62af6e26",
+          "user_id": "user_72bbaef6bc444153a5cd269610f3f640",
+          "agent_id": "support-agent_72bbaef6bc444153a5cd269610f3f640",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_72bbaef6bc444153a5cd269610f3f640",
+          "task_scope": [
+            "demo-fixtures"
+          ],
+          "authenticated_at": 1789572252.842394,
+          "expires_at": 1789575852.842394,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "execution_status": "succeeded",
+          "latency_ms": 1.074
+        }
+      ]
+    },
+    {
+      "case_id": "refund",
+      "expected_tool": "refund.issue",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "refund_id": "refund_f717cac855964ab29be0d45fab02fe26",
+        "order_id": "order_438",
+        "amount_minor": 1200,
+        "currency": "GBP",
+        "status": "simulated"
+      },
+      "audit": [
+        {
+          "request_id": "63b06db8ec8f49af9f173580a5d9c58c",
+          "session_id": "refund",
+          "tool": "refund.issue",
+          "timestamp": "2026-09-16T15:24:14.196133+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_2",
+          "parameters_hash": "e0271935297dcd5ce32e794796656d0f4e8fcb0d9856adeafa7c1273aeb5aaf6",
+          "user_id": "user_4088464ce4f54f2fb8e1bfb91770e7f9",
+          "agent_id": "support-agent_4088464ce4f54f2fb8e1bfb91770e7f9",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_4088464ce4f54f2fb8e1bfb91770e7f9",
+          "task_scope": [
+            "demo-fixtures"
+          ],
+          "authenticated_at": 1789572253.648456,
+          "expires_at": 1789575853.648456,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "execution_status": "succeeded",
+          "latency_ms": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "query",
+      "expected_tool": "database.query",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "columns": [
+          "order_id",
+          "customer_id",
+          "amount_minor",
+          "refunded_minor",
+          "currency"
+        ],
+        "rows": [
+          {
+            "order_id": "order_438",
+            "customer_id": "customer_001",
+            "amount_minor": 100000,
+            "refunded_minor": 0,
+            "currency": "GBP"
+          }
+        ],
+        "row_count": 1
+      },
+      "audit": [
+        {
+          "request_id": "86616d0344654121bb5106b8d9eb14d7",
+          "session_id": "query",
+          "tool": "database.query",
+          "timestamp": "2026-09-16T15:24:14.882916+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_2",
+          "parameters_hash": "21dd91449c7947539862ecc124f6680ccfc1cb386723be80581ac50691c35341",
+          "user_id": "user_e338273d47ba411ba13c74bcc4f5bb0d",
+          "agent_id": "support-agent_e338273d47ba411ba13c74bcc4f5bb0d",
+          "tenant_id": "demo-tenant",
+          "task_id": "task_e338273d47ba411ba13c74bcc4f5bb0d",
+          "task_scope": [
+            "demo-fixtures"
+          ],
+          "authenticated_at": 1789572254.323959,
+          "expires_at": 1789575854.323959,
+          "authentication_method": "local_simulated",
+          "identity_status": "validated",
+          "execution_status": "succeeded",
+          "latency_ms": 0.715
+        }
+      ]
+    }
+  ],
+  "passed": 5,
+  "status": "passed"
+}

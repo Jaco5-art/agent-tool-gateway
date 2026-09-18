@@ -1,0 +1,75 @@
+{
+  "phase": 6,
+  "mode": "persistent_approval_with_mcp_and_regression",
+  "timestamp": "2026-09-17T14:47:52.505468+00:00",
+  "status": "passed",
+  "tests_run": 118,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "live_model": "not_run_automated_reviewer_fixture",
+  "output": "test_arbitrary_sql_rejected (test_phase1.BusinessTests.test_arbitrary_sql_rejected) ... ok\ntest_concurrent_refunds_cannot_exceed_balance (test_phase1.BusinessTests.test_concurrent_refunds_cannot_exceed_balance) ... ok\ntest_currency_failure_has_no_effect (test_phase1.BusinessTests.test_currency_failure_has_no_effect) ... ok\ntest_empty_query (test_phase1.BusinessTests.test_empty_query) ... ok\ntest_extra_fields_rejected (test_phase1.BusinessTests.test_extra_fields_rejected) ... ok\ntest_missing_customer (test_phase1.BusinessTests.test_missing_customer) ... ok\ntest_over_refund_rolls_back (test_phase1.BusinessTests.test_over_refund_rolls_back) ... ok\ntest_query_limits (test_phase1.BusinessTests.test_query_limits) ... ok\ntest_stale_ticket_no_mutation (test_phase1.BusinessTests.test_stale_ticket_no_mutation) ... ok\ntest_strict_money_types (test_phase1.BusinessTests.test_strict_money_types) ... ok\ntest_ticket_closed_only_once (test_phase1.BusinessTests.test_ticket_closed_only_once) ... ok\ntest_unknown_tool_audited (test_phase1.BusinessTests.test_unknown_tool_audited) ... ok\ntest_manifest_and_sdk_adapter (test_phase1.MCPTests.test_manifest_and_sdk_adapter) ... ok\ntest_protocol_invalid_call_no_side_effect (test_phase1.MCPTests.test_protocol_invalid_call_no_side_effect) ... ok\ntest_identity_survives_mcp_and_revocation (test_phase2.IdentityMCPTests.test_identity_survives_mcp_and_revocation) ... ok\ntest_agent_expired (test_phase2.IdentityTests.test_agent_expired) ... ok\ntest_cross_tenant_rejected (test_phase2.IdentityTests.test_cross_tenant_rejected) ... ok\ntest_disabled_agent_on_next_call (test_phase2.IdentityTests.test_disabled_agent_on_next_call) ... ok\ntest_disabled_user (test_phase2.IdentityTests.test_disabled_user) ... ok\ntest_duplicate_principal_cannot_overwrite (test_phase2.IdentityTests.test_duplicate_principal_cannot_overwrite) ... ok\ntest_identity_spoof_rejected_and_audit_trusted (test_phase2.IdentityTests.test_identity_spoof_rejected_and_audit_trusted) ... ok\ntest_independent_identities_and_owner (test_phase2.IdentityTests.test_independent_identities_and_owner) ... ok\ntest_revocation_prevents_mutation (test_phase2.IdentityTests.test_revocation_prevents_mutation) ... ok\ntest_session_expiry_boundary (test_phase2.IdentityTests.test_session_expiry_boundary) ... ok\ntest_session_mismatch (test_phase2.IdentityTests.test_session_mismatch) ... ok\ntest_sqlite_connection_closed (test_phase2.IdentityTests.test_sqlite_connection_closed) ... ok\ntest_token_unknown (test_phase2.IdentityTests.test_token_unknown) ... ok\ntest_unknown_agent (test_phase2.IdentityTests.test_unknown_agent) ... ok\ntest_unknown_user (test_phase2.IdentityTests.test_unknown_user) ... ok\ntest_action_resource_mismatch (test_phase3.CapabilityTests.test_action_resource_mismatch) ... ok\ntest_amount_ceiling_requires_currency (test_phase3.CapabilityTests.test_amount_ceiling_requires_currency) ... ok\ntest_expiry_boundary (test_phase3.CapabilityTests.test_expiry_boundary) ... ok\ntest_inclusive_amount_limit (test_phase3.CapabilityTests.test_inclusive_amount_limit) ... ok\ntest_invalid_lifetime (test_phase3.CapabilityTests.test_invalid_lifetime) ... ok\ntest_invalid_time (test_phase3.CapabilityTests.test_invalid_time) ... ok\ntest_missing_refund_fields (test_phase3.CapabilityTests.test_missing_refund_fields) ... ok\ntest_multiple_resources (test_phase3.CapabilityTests.test_multiple_resources) ... ok\ntest_no_wildcards_or_unknown_conditions (test_phase3.CapabilityTests.test_no_wildcards_or_unknown_conditions) ... ok\ntest_not_before_boundary (test_phase3.CapabilityTests.test_not_before_boundary) ... ok\ntest_over_limit (test_phase3.CapabilityTests.test_over_limit) ... ok\ntest_read_capability (test_phase3.CapabilityTests.test_read_capability) ... ok\ntest_revoked (test_phase3.CapabilityTests.test_revoked) ... ok\ntest_strict_money (test_phase3.CapabilityTests.test_strict_money) ... ok\ntest_untrusted_model_copy_revalidated (test_phase3.CapabilityTests.test_untrusted_model_copy_revalidated) ... ok\ntest_valid_refund (test_phase3.CapabilityTests.test_valid_refund) ... ok\ntest_wrong_action (test_phase3.CapabilityTests.test_wrong_action) ... ok\ntest_wrong_currency (test_phase3.CapabilityTests.test_wrong_currency) ... ok\ntest_wrong_resource (test_phase3.CapabilityTests.test_wrong_resource) ... ok\ntest_wrong_subject_id (test_phase3.CapabilityTests.test_wrong_subject_id) ... ok\ntest_wrong_subject_type (test_phase3.CapabilityTests.test_wrong_subject_type) ... ok\ntest_wrong_tenant (test_phase3.CapabilityTests.test_wrong_tenant) ... ok\ntest_duplicate_cannot_overwrite (test_phase3.StoreTests.test_duplicate_cannot_overwrite) ... ok\ntest_empty_store_no_match (test_phase3.StoreTests.test_empty_store_no_match) ... ok\ntest_grants_cannot_combine_to_expand (test_phase3.StoreTests.test_grants_cannot_combine_to_expand) ... ok\ntest_matching_alternative (test_phase3.StoreTests.test_matching_alternative) ... ok\ntest_persistence (test_phase3.StoreTests.test_persistence) ... ok\ntest_revoke (test_phase3.StoreTests.test_revoke) ... ok\ntest_all_three_decisions_over_real_mcp (test_phase4.PolicyMCPTests.test_all_three_decisions_over_real_mcp) ... ok\ntest_agent_ceiling (test_phase4.PolicyTests.test_agent_ceiling) ... ok\ntest_approval_parameter_cannot_bypass (test_phase4.PolicyTests.test_approval_parameter_cannot_bypass) ... ok\ntest_authorized_close_changes_state (test_phase4.PolicyTests.test_authorized_close_changes_state) ... ok\ntest_authorized_read_allowed (test_phase4.PolicyTests.test_authorized_read_allowed) ... ok\ntest_business_failure_is_denied_before_approval (test_phase4.PolicyTests.test_business_failure_is_denied_before_approval) ... ok\ntest_expired_grant_checked_each_call (test_phase4.PolicyTests.test_expired_grant_checked_each_call) ... ok\ntest_missing_agent_capability (test_phase4.PolicyTests.test_missing_agent_capability) ... ok\ntest_missing_user_capability_precedes_approval (test_phase4.PolicyTests.test_missing_user_capability_precedes_approval) ... ok\ntest_query_scope_binds_customer_filter (test_phase4.PolicyTests.test_query_scope_binds_customer_filter) ... ok\ntest_refund_requires_approval_no_side_effect (test_phase4.PolicyTests.test_refund_requires_approval_no_side_effect) ... ok\ntest_resource_tenant_from_database (test_phase4.PolicyTests.test_resource_tenant_from_database) ... ok\ntest_task_action_denied (test_phase4.PolicyTests.test_task_action_denied) ... ok\ntest_task_amount_denied (test_phase4.PolicyTests.test_task_amount_denied) ... ok\ntest_task_resource_denied (test_phase4.PolicyTests.test_task_resource_denied) ... ok\ntest_unexpected_policy_error_fails_closed (test_phase4.PolicyTests.test_unexpected_policy_error_fails_closed) ... ok\ntest_user_amount_constraint (test_phase4.PolicyTests.test_user_amount_constraint) ... ok\ntest_hidden_tool_direct_call_blocked (test_phase5.BindingMCPTests.test_hidden_tool_direct_call_blocked) ... ok\ntest_sdk_enabled_rechecks_manifest (test_phase5.BindingMCPTests.test_sdk_enabled_rechecks_manifest) ... ok\ntest_agent_ceiling_filters (test_phase5.BindingTests.test_agent_ceiling_filters) ... ok\ntest_approval_eligible_tool_remains_visible (test_phase5.BindingTests.test_approval_eligible_tool_remains_visible) ... ok\ntest_disabled_agent_empty (test_phase5.BindingTests.test_disabled_agent_empty) ... ok\ntest_disjoint_currency_hides (test_phase5.BindingTests.test_disjoint_currency_hides) ... ok\ntest_expired_grant_hidden (test_phase5.BindingTests.test_expired_grant_hidden) ... ok\ntest_foreign_resource_hidden (test_phase5.BindingTests.test_foreign_resource_hidden) ... ok\ntest_full_manifest (test_phase5.BindingTests.test_full_manifest) ... ok\ntest_listing_has_no_business_side_effects (test_phase5.BindingTests.test_listing_has_no_business_side_effects) ... ok\ntest_no_common_agent_grant (test_phase5.BindingTests.test_no_common_agent_grant) ... ok\ntest_no_common_user_grant (test_phase5.BindingTests.test_no_common_user_grant) ... ok\ntest_read_only_task (test_phase5.BindingTests.test_read_only_task) ... ok\ntest_resource_scope (test_phase5.BindingTests.test_resource_scope) ... ok\ntest_revocation_refresh (test_phase5.BindingTests.test_revocation_refresh) ... ok\ntest_zero_refund_limit_hides (test_phase5.BindingTests.test_zero_refund_limit_hides) ... ok\ntest_mcp_request_review_and_gateway_resume (test_phase6.ApprovalMCPTests.test_mcp_request_review_and_gateway_resume) ... ok\ntest_approve_then_resume (test_phase6.ApprovalTests.test_approve_then_resume) ... ok\ntest_audit_links_approval_and_execution (test_phase6.ApprovalTests.test_audit_links_approval_and_execution) ... ok\ntest_business_state_rechecked_on_resume (test_phase6.ApprovalTests.test_business_state_rechecked_on_resume) ... ok\ntest_cannot_reverse_rejection (test_phase6.ApprovalTests.test_cannot_reverse_rejection) ... ok\ntest_concurrent_resume_once (test_phase6.ApprovalTests.test_concurrent_resume_once) ... ok\ntest_current_capability_rechecked (test_phase6.ApprovalTests.test_current_capability_rechecked) ... ok\ntest_current_identity_rechecked (test_phase6.ApprovalTests.test_current_identity_rechecked) ... ok\ntest_denial_creates_no_approval (test_phase6.ApprovalTests.test_denial_creates_no_approval) ... ok\ntest_double_resume_blocked (test_phase6.ApprovalTests.test_double_resume_blocked) ... ok\ntest_expired_approval (test_phase6.ApprovalTests.test_expired_approval) ... ok\ntest_invalid_reviewer_token (test_phase6.ApprovalTests.test_invalid_reviewer_token) ... ok\ntest_parameters_cannot_change (test_phase6.ApprovalTests.test_parameters_cannot_change) ... ok\ntest_pending_cannot_execute (test_phase6.ApprovalTests.test_pending_cannot_execute) ... ok\ntest_pending_expiry_prevents_review (test_phase6.ApprovalTests.test_pending_expiry_prevents_review) ... ok\ntest_pending_persisted (test_phase6.ApprovalTests.test_pending_persisted) ... ok\ntest_policy_version_change (test_phase6.ApprovalTests.test_policy_version_change) ... ok\ntest_reason_cannot_change (test_phase6.ApprovalTests.test_reason_cannot_change) ... ok\ntest_rejection (test_phase6.ApprovalTests.test_rejection) ... ok\ntest_requester_token_is_not_reviewer (test_phase6.ApprovalTests.test_requester_token_is_not_reviewer) ... ok\ntest_reviewer_disabled_after_approval (test_phase6.ApprovalTests.test_reviewer_disabled_after_approval) ... ok\ntest_reviewer_expiry_on_resume (test_phase6.ApprovalTests.test_reviewer_expiry_on_resume) ... ok\ntest_reviewer_wrong_scope (test_phase6.ApprovalTests.test_reviewer_wrong_scope) ... ok\ntest_reviewer_wrong_tenant (test_phase6.ApprovalTests.test_reviewer_wrong_tenant) ... ok\ntest_self_approval_forbidden (test_phase6.ApprovalTests.test_self_approval_forbidden) ... ok\ntest_session_cannot_change (test_phase6.ApprovalTests.test_session_cannot_change) ... ok\ntest_uncertain_execution_never_auto_retried (test_phase6.ApprovalTests.test_uncertain_execution_never_auto_retried) ... ok\ntest_unknown_approval (test_phase6.ApprovalTests.test_unknown_approval) ... ok\n\n----------------------------------------------------------------------\nRan 118 tests in 5.815s\n\nOK\n",
+  "binding_benchmark": {
+    "scope": "four_handcrafted_profiles_no_llm",
+    "profiles": [
+      {
+        "profile": "customer_read",
+        "static_catalog_count": 5,
+        "visible_tools": [
+          "crm.get_customer"
+        ],
+        "visible_count": 1,
+        "exposure_reduction": 0.8,
+        "authorized_executable_calls_passed": 1,
+        "approval_required_calls": 0
+      },
+      {
+        "profile": "ticket_operations",
+        "static_catalog_count": 5,
+        "visible_tools": [
+          "ticket.read",
+          "ticket.close"
+        ],
+        "visible_count": 2,
+        "exposure_reduction": 0.6,
+        "authorized_executable_calls_passed": 2,
+        "approval_required_calls": 0
+      },
+      {
+        "profile": "support",
+        "static_catalog_count": 5,
+        "visible_tools": [
+          "crm.get_customer",
+          "ticket.read",
+          "ticket.close"
+        ],
+        "visible_count": 3,
+        "exposure_reduction": 0.4,
+        "authorized_executable_calls_passed": 3,
+        "approval_required_calls": 0
+      },
+      {
+        "profile": "full_demo",
+        "static_catalog_count": 5,
+        "visible_tools": [
+          "crm.get_customer",
+          "ticket.read",
+          "ticket.close",
+          "refund.issue",
+          "database.query"
+        ],
+        "visible_count": 5,
+        "exposure_reduction": 0.0,
+        "authorized_executable_calls_passed": 4,
+        "approval_required_calls": 1
+      }
+    ],
+    "average_static_tool_count": 5,
+    "average_visible_tool_count": 2.75,
+    "tool_exposure_reduction": 0.44999999999999996,
+    "authorized_executable_calls_passed": 10,
+    "approval_required_calls": 1,
+    "live_model_task_success": "not_measured",
+    "static_baseline_task_success": "not_measured"
+  }
+}

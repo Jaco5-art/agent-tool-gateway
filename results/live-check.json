@@ -1,0 +1,14 @@
+{
+  "mode": "live_model",
+  "timestamp": "2026-09-16T15:09:55.745936+00:00",
+  "python": "3.12.14",
+  "versions": {
+    "mcp": "2.2.0",
+    "openai-agents": "0.22.2",
+    "pydantic": "2.13.5"
+  },
+  "authorization": "not_implemented_phase1",
+  "cases": [],
+  "status": "not_run",
+  "reason": "OPENAI_API_KEY_missing"
+}

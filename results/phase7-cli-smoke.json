@@ -1,0 +1,51 @@
+{
+  "mode": "scripted_cli_not_human_review",
+  "events": [
+    {
+      "command": "prepare",
+      "status": "pending",
+      "token_id": null,
+      "amount_minor": null
+    },
+    {
+      "command": "approve",
+      "status": "approved",
+      "token_id": null,
+      "amount_minor": null
+    },
+    {
+      "command": "issue",
+      "status": null,
+      "token_id": "jit_4016bb28be8443d285eb5457a77140f6",
+      "amount_minor": null
+    },
+    {
+      "command": "inspect-token",
+      "status": "active",
+      "token_id": "jit_4016bb28be8443d285eb5457a77140f6",
+      "amount_minor": null
+    },
+    {
+      "command": "resume",
+      "status": "simulated",
+      "token_id": null,
+      "amount_minor": 1200
+    },
+    {
+      "command": "inspect-token",
+      "status": "consumed",
+      "token_id": "jit_4016bb28be8443d285eb5457a77140f6",
+      "amount_minor": null
+    },
+    {
+      "command": "show",
+      "status": "executed",
+      "token_id": null,
+      "amount_minor": null
+    },
+    {
+      "command": "repeat_resume",
+      "blocked": "JIT_NOT_ACTIVE"
+    }
+  ]
+}

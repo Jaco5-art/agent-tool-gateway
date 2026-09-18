@@ -1,0 +1,39 @@
+{
+  "mode": "scripted_cli_smoke_not_human_review",
+  "events": [
+    {
+      "command": "prepare",
+      "status": "pending",
+      "approval_id": "approval_7e762783ee0441e39fe5c9e68a25eec5",
+      "amount_minor": null
+    },
+    {
+      "command": "show",
+      "status": "pending",
+      "approval_id": "approval_7e762783ee0441e39fe5c9e68a25eec5",
+      "amount_minor": null
+    },
+    {
+      "command": "approve",
+      "status": "approved",
+      "approval_id": "approval_7e762783ee0441e39fe5c9e68a25eec5",
+      "amount_minor": null
+    },
+    {
+      "command": "resume",
+      "status": "simulated",
+      "approval_id": null,
+      "amount_minor": 1200
+    },
+    {
+      "command": "show",
+      "status": "executed",
+      "approval_id": "approval_7e762783ee0441e39fe5c9e68a25eec5",
+      "amount_minor": null
+    },
+    {
+      "command": "repeat_resume",
+      "blocked": "APPROVAL_NOT_EXECUTABLE"
+    }
+  ]
+}

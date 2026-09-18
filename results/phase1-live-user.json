@@ -1,0 +1,135 @@
+{
+  "mode": "live_model",
+  "timestamp": "2026-09-16T15:18:16.537787+00:00",
+  "python": "3.12.10",
+  "versions": {
+    "mcp": "2.2.0",
+    "openai-agents": "0.22.2",
+    "pydantic": "2.13.5"
+  },
+  "authorization": "not_implemented_phase1",
+  "cases": [
+    {
+      "case_id": "customer",
+      "expected_tool": "crm.get_customer",
+      "passed": true,
+      "agent": {
+        "session_id": "session_ad80869cdc9040d28f68142889b49e8a",
+        "model": "gpt-5-mini",
+        "final_output": "Customer record:\n- customer_id: customer_001\n- name: Demo Customer\n- status: active"
+      },
+      "audit": [
+        {
+          "request_id": "6e7fa50a09ce4991aa7459ebd76c9b8f",
+          "session_id": "session_ad80869cdc9040d28f68142889b49e8a",
+          "tool": "crm.get_customer",
+          "timestamp": "2026-09-16T15:18:22.752149+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "b1209ad8f43d0a3d5f6a67adc5598f746fb39d7956e9b2a469bc6a3987340555",
+          "execution_status": "succeeded",
+          "latency_ms": 1.62
+        }
+      ]
+    },
+    {
+      "case_id": "ticket",
+      "expected_tool": "ticket.read",
+      "passed": true,
+      "agent": {
+        "session_id": "session_e7235403bcf14f5786783450509f1704",
+        "model": "gpt-5-mini",
+        "final_output": "Ticket ticket_101 (version 1)\n- Customer ID: customer_001\n- Status: open\n- Summary: Delivery question\n- Resolution: (none)"
+      },
+      "audit": [
+        {
+          "request_id": "01dd1fb391b94f36b3e550ae3375e727",
+          "session_id": "session_e7235403bcf14f5786783450509f1704",
+          "tool": "ticket.read",
+          "timestamp": "2026-09-16T15:18:29.227106+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "b6b5f2e08641a181f05c77705ae35367ea7ed7db21db2a5ff6a3574751ecbfe0",
+          "execution_status": "succeeded",
+          "latency_ms": 1.49
+        }
+      ]
+    },
+    {
+      "case_id": "close",
+      "expected_tool": "ticket.close",
+      "passed": true,
+      "agent": {
+        "session_id": "session_40147774828f48f799f311901290bf0f",
+        "model": "gpt-5-mini",
+        "final_output": "Ticket ticket_101 read successfully (version 1). I closed the ticket with resolution \"Resolved\". Updated ticket details:\n- ticket_id: ticket_101\n- customer_id: customer_001\n- status: closed\n- summary: Delivery question\n- resolution: Resolved\n- version: 2"
+      },
+      "audit": [
+        {
+          "request_id": "25f5d60a4f9d421d8050bcb132682159",
+          "session_id": "session_40147774828f48f799f311901290bf0f",
+          "tool": "ticket.read",
+          "timestamp": "2026-09-16T15:18:36.461946+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "b6b5f2e08641a181f05c77705ae35367ea7ed7db21db2a5ff6a3574751ecbfe0",
+          "execution_status": "succeeded",
+          "latency_ms": 1.542
+        },
+        {
+          "request_id": "f1c746b3e5e84d32b4ccb6b223105eef",
+          "session_id": "session_40147774828f48f799f311901290bf0f",
+          "tool": "ticket.close",
+          "timestamp": "2026-09-16T15:18:40.723608+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "c666e63c5463daf4f2a4329cae3b4df837c098753a0fbc2bfddce90d62af6e26",
+          "execution_status": "succeeded",
+          "latency_ms": 2.96
+        }
+      ]
+    },
+    {
+      "case_id": "refund",
+      "expected_tool": "refund.issue",
+      "passed": true,
+      "agent": {
+        "session_id": "session_b9570e4119ff42568d4782aec0de2f44",
+        "model": "gpt-5-mini",
+        "final_output": "Simulated refund issued.\n\nDetails:\n- Refund ID: refund_a5c64df9107a4e1cbd7e381e8597dc68\n- Order ID: order_438\n- Amount: GBP 12.00\n- Currency: GBP\n- Status: simulated\n\nNote: This is a simulation only and not a real payment refund."
+      },
+      "audit": [
+        {
+          "request_id": "31fda4d40a934424914773c69e8e3d0c",
+          "session_id": "session_b9570e4119ff42568d4782aec0de2f44",
+          "tool": "refund.issue",
+          "timestamp": "2026-09-16T15:18:46.519717+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "e0271935297dcd5ce32e794796656d0f4e8fcb0d9856adeafa7c1273aeb5aaf6",
+          "execution_status": "succeeded",
+          "latency_ms": 3.806
+        }
+      ]
+    },
+    {
+      "case_id": "query",
+      "expected_tool": "database.query",
+      "passed": true,
+      "agent": {
+        "session_id": "session_a9e1ff1c688d4af8a79b6598b1c69135",
+        "model": "gpt-5-mini",
+        "final_output": "Found 1 order for customer_001 (limit 10):\n\n- order_id: order_438\n  - amount: GBP 1,000.00 (amount_minor = 100000)\n  - refunded: GBP 0.00 (refunded_minor = 0)\n  - currency: GBP\n\nWould you like me to take any action on this order (e.g., issue a simulated refund, open/close a ticket, or fetch more details)?"
+      },
+      "audit": [
+        {
+          "request_id": "e24f59550ccb4c3c969f0ff0288b2b76",
+          "session_id": "session_a9e1ff1c688d4af8a79b6598b1c69135",
+          "tool": "database.query",
+          "timestamp": "2026-09-16T15:18:52.321292+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "21dd91449c7947539862ecc124f6680ccfc1cb386723be80581ac50691c35341",
+          "execution_status": "succeeded",
+          "latency_ms": 1.504
+        }
+      ]
+    }
+  ],
+  "passed": 5,
+  "status": "passed"
+}

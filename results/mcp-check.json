@@ -1,0 +1,152 @@
+{
+  "mode": "mcp_protocol",
+  "timestamp": "2026-09-16T15:09:51.430026+00:00",
+  "python": "3.12.14",
+  "versions": {
+    "mcp": "2.2.0",
+    "openai-agents": "0.22.2",
+    "pydantic": "2.13.5"
+  },
+  "authorization": "not_implemented_phase1",
+  "cases": [
+    {
+      "case_id": "customer",
+      "expected_tool": "crm.get_customer",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "customer_id": "customer_001",
+        "name": "Demo Customer",
+        "status": "active"
+      },
+      "audit": [
+        {
+          "request_id": "986f6304176b4e49ba504b476178b23a",
+          "session_id": "customer",
+          "tool": "crm.get_customer",
+          "timestamp": "2026-09-16T15:09:52.033451+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "b1209ad8f43d0a3d5f6a67adc5598f746fb39d7956e9b2a469bc6a3987340555",
+          "execution_status": "succeeded",
+          "latency_ms": 0.466
+        }
+      ]
+    },
+    {
+      "case_id": "ticket",
+      "expected_tool": "ticket.read",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "open",
+        "summary": "Delivery question",
+        "resolution": "",
+        "version": 1
+      },
+      "audit": [
+        {
+          "request_id": "de8db19ffae64e0791811e9e7e673e04",
+          "session_id": "ticket",
+          "tool": "ticket.read",
+          "timestamp": "2026-09-16T15:09:52.796421+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "b6b5f2e08641a181f05c77705ae35367ea7ed7db21db2a5ff6a3574751ecbfe0",
+          "execution_status": "succeeded",
+          "latency_ms": 0.296
+        }
+      ]
+    },
+    {
+      "case_id": "close",
+      "expected_tool": "ticket.close",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "ticket_id": "ticket_101",
+        "customer_id": "customer_001",
+        "status": "closed",
+        "summary": "Delivery question",
+        "resolution": "Resolved",
+        "version": 2
+      },
+      "audit": [
+        {
+          "request_id": "2a3e2e4dbc254efc8065233592400b93",
+          "session_id": "close",
+          "tool": "ticket.close",
+          "timestamp": "2026-09-16T15:09:53.540807+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "c666e63c5463daf4f2a4329cae3b4df837c098753a0fbc2bfddce90d62af6e26",
+          "execution_status": "succeeded",
+          "latency_ms": 0.591
+        }
+      ]
+    },
+    {
+      "case_id": "refund",
+      "expected_tool": "refund.issue",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "refund_id": "refund_3fc55d75924644658eb411f8fe861d3d",
+        "order_id": "order_438",
+        "amount_minor": 1200,
+        "currency": "GBP",
+        "status": "simulated"
+      },
+      "audit": [
+        {
+          "request_id": "1d1ca187687742a0916cedc96ae59b09",
+          "session_id": "refund",
+          "tool": "refund.issue",
+          "timestamp": "2026-09-16T15:09:54.204481+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "e0271935297dcd5ce32e794796656d0f4e8fcb0d9856adeafa7c1273aeb5aaf6",
+          "execution_status": "succeeded",
+          "latency_ms": 0.592
+        }
+      ]
+    },
+    {
+      "case_id": "query",
+      "expected_tool": "database.query",
+      "passed": true,
+      "protocol_version": "2025-11-25",
+      "output": {
+        "columns": [
+          "order_id",
+          "customer_id",
+          "amount_minor",
+          "refunded_minor",
+          "currency"
+        ],
+        "rows": [
+          {
+            "order_id": "order_438",
+            "customer_id": "customer_001",
+            "amount_minor": 100000,
+            "refunded_minor": 0,
+            "currency": "GBP"
+          }
+        ],
+        "row_count": 1
+      },
+      "audit": [
+        {
+          "request_id": "131c38650115481c9dddcdaa58b8ce43",
+          "session_id": "query",
+          "tool": "database.query",
+          "timestamp": "2026-09-16T15:09:54.912461+00:00",
+          "policy_decision": "NOT_IMPLEMENTED_PHASE_1",
+          "parameters_hash": "21dd91449c7947539862ecc124f6680ccfc1cb386723be80581ac50691c35341",
+          "execution_status": "succeeded",
+          "latency_ms": 0.594
+        }
+      ]
+    }
+  ],
+  "passed": 5,
+  "status": "passed"
+}

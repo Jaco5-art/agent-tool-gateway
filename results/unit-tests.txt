@@ -1,0 +1,19 @@
+test_arbitrary_sql_rejected (test_phase1.BusinessTests.test_arbitrary_sql_rejected) ... ok
+test_concurrent_refunds_cannot_exceed_balance (test_phase1.BusinessTests.test_concurrent_refunds_cannot_exceed_balance) ... ok
+test_currency_failure_has_no_effect (test_phase1.BusinessTests.test_currency_failure_has_no_effect) ... ok
+test_empty_query (test_phase1.BusinessTests.test_empty_query) ... ok
+test_extra_fields_rejected (test_phase1.BusinessTests.test_extra_fields_rejected) ... ok
+test_missing_customer (test_phase1.BusinessTests.test_missing_customer) ... ok
+test_over_refund_rolls_back (test_phase1.BusinessTests.test_over_refund_rolls_back) ... ok
+test_query_limits (test_phase1.BusinessTests.test_query_limits) ... ok
+test_stale_ticket_no_mutation (test_phase1.BusinessTests.test_stale_ticket_no_mutation) ... ok
+test_strict_money_types (test_phase1.BusinessTests.test_strict_money_types) ... ok
+test_ticket_closed_only_once (test_phase1.BusinessTests.test_ticket_closed_only_once) ... ok
+test_unknown_tool_audited (test_phase1.BusinessTests.test_unknown_tool_audited) ... ok
+test_manifest_and_sdk_adapter (test_phase1.MCPTests.test_manifest_and_sdk_adapter) ... ok
+test_protocol_invalid_call_no_side_effect (test_phase1.MCPTests.test_protocol_invalid_call_no_side_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.557s
+
+OK
